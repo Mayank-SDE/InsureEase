@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import healthImage from "../assets/images/health.png";
+import healthImage from "../../assets/images/health.png";
 
 const HealthInsurance = () => {
   return (

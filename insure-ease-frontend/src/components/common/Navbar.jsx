@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
-  // Hardcoded role for now (guest, user, admin)
-  const [role, setRole] = useState("guest"); // Change this to "user" or "admin" to test
+  // Placeholder: Replace with Redux state later
+  const [role, setRole] = useState("admin"); // "guest", "user", or "admin"
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
@@ -14,6 +14,9 @@ const Navbar = () => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +26,14 @@ const Navbar = () => {
               <Link className="nav-link text-white" to="/">Home</Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle text-white" href="#" id="insuranceDropdown" role="button" data-bs-toggle="dropdown">
+              <a
+                className="nav-link dropdown-toggle text-white"
+                href="#"
+                id="insuranceDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Explore Insurance
               </a>
               <ul className="dropdown-menu">
@@ -34,7 +44,10 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
+
+          {/* Right side navbar items */}
           <ul className="navbar-nav">
+            {/* Guest Links */}
             {role === "guest" && (
               <>
                 <li className="nav-item">
@@ -45,6 +58,8 @@ const Navbar = () => {
                 </li>
               </>
             )}
+
+            {/* User Links */}
             {role === "user" && (
               <>
                 <li className="nav-item">
@@ -64,19 +79,31 @@ const Navbar = () => {
                 </li>
               </>
             )}
+
+            {/* Admin Links */}
             {role === "admin" && (
               <>
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/admin">Admin Dashboard</Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="/manage-policies">Manage Policies</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="/approve-claims">Approve Claims</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="/analytics">Analytics</Link>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle text-white"
+                    href="#"
+                    id="adminDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Admin Panel
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link className="dropdown-item" to="/manage-policies">Manage Policies</Link></li>
+                    <li><Link className="dropdown-item" to="/approve-claims">Approve Claims</Link></li>
+                    <li><Link className="dropdown-item" to="/manage-orders">Manage Orders</Link></li>
+                    <li><Link className="dropdown-item" to="/analytics">Analytics</Link></li>
+                    <li><Link className="dropdown-item" to="/admin/users">Manage Users</Link></li>
+                  </ul>
                 </li>
                 <li className="nav-item">
                   <button className="btn btn-outline-light ms-2">Logout</button>

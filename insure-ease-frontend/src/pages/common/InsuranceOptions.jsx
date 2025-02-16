@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import CarInsurance from '../assets/images/car.png';
-import HealthInsurance from '../assets/images/health.png';
-import HouseInsurance from '../assets/images/house.png';
-import LifeInsurance from '../assets/images/life.png';
+import CarInsurance from '../../assets/images/car.png';
+import HealthInsurance from '../../assets/images/health.png';
+import HouseInsurance from '../../assets/images/house.png';
+import LifeInsurance from '../../assets/images/life.png';
 
 const InsuranceOptions = () => {
   const insurancePlans = [

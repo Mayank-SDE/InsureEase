@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LifeInsuranceImg from '../assets/images/life.png';
+import LifeInsuranceImg from '../../assets/images/life.png';
 const LifeInsurance = () => {
   return (
     <div className="container mt-5">

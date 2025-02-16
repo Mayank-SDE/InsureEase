@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CarInsuranceImage from "../assets/images/car.png";
+import CarInsuranceImage from "../../assets/images/car.png";
 
 const CarInsurance = () => {
   return (

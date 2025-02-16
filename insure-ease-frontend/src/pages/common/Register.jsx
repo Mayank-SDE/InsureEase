@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import ProfileImg from '../assets/images/profile.avif';
+import ProfileImg from '../../assets/images/profile.avif';
 const Register = () => {
   const [formData, setFormData] = useState({
     profilePicture: "",
