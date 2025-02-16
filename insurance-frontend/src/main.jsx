@@ -1,12 +1,11 @@
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import store from "./store/store";
 import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap styling
-import "react-toastify/dist/ReactToastify.css"; // Toast notifications styling
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <App />
   </Provider>

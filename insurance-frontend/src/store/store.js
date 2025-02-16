@@ -5,7 +5,7 @@ import cartReducer from "../features/cart/cartSlice";
 import orderReducer from "../features/orders/orderSlice";
 import claimReducer from "../features/claims/claimSlice";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     auth: authReducer,
     policies: policyReducer,
@@ -15,4 +15,4 @@ export const store = configureStore({
   },
 });
 
-
+export default store;
