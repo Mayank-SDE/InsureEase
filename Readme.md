@@ -488,3 +488,128 @@ The division of services ensures efficient handling of authentication, policy ma
 - **MS .NET is responsible for cart management.**
 - **All APIs align with the finalized database schema (`db.sql`).**
 
+# Insurance Policy Management System - Frontend
+
+This is the **frontend** of the **Insurance Policy Management System**, built using **React.js, Redux, Redux Toolkit, and Axios**. The UI provides a seamless experience for users to browse, purchase, and manage insurance policies, while admins can manage policies, claims, and user data.
+
+## 🚀 Tech Stack
+- **React.js** - Frontend framework
+- **Redux Toolkit** - State management
+- **React Router** - Routing
+- **Axios** - API requests
+- **Bootstrap** - Styling
+
+## 📂 Project Structure
+The project follows a **feature-based folder structure**, ensuring modularity and scalability.
+
+```
+/insurance-policy-management-frontend
+│── /public                 # Static assets (favicon, images)
+│── /src
+│   │── /assets             # Icons, images
+│   │── /components         # Reusable UI components
+│   │── /features           # Redux slices for different functionalities
+│   │   │── auth/           # Login, Register, Logout, Third-party auth
+│   │   │── policies/       # Insurance policies (CRUD, details, approval)
+│   │   │── cart/           # Cart management (add/remove policies)
+│   │   │── orders/         # Order & payment processing
+│   │   │── claims/         # Insurance claims submission & status tracking
+│   │   │── analytics/      # Admin dashboard & analytics
+│   │── /pages              # Main pages (React components for routes)
+│   │── /services           # API services using Axios
+│   │── /store              # Redux store configuration
+│   │── /utils              # Helper functions
+│   │── App.js              # Main app component
+│   │── index.js            # Entry point
+│── package.json
+│── README.md
+```
+
+## 🔹 **Components & Features Overview**
+
+### 📌 **1. Authentication (Auth Service - `/features/auth/`)**
+- **`Login.js`** → Handles user login with JWT authentication and third-party login (Google/GitHub)
+- **`Register.js`** → New user registration, including profile picture upload
+- **`Logout.js`** → Clears authentication tokens and logs out user
+
+### 📌 **2. Insurance Policies (`/features/policies/`)**
+- **`Policies.js`** → Displays available insurance policies by category (Life, Health, Car, Home)
+- **`PolicyDetails.js`** → Shows details of a selected policy, including premium calculation
+- **`AdminPolicyApproval.js`** → Admin page for approving/rejecting policies
+
+### 📌 **3. Cart Management (`/features/cart/`)**
+- **`Cart.js`** → Displays policies added to the cart
+- **`AddToCartButton.js`** → Allows users to add/remove policies from the cart
+- **`Checkout.js`** → Handles checkout process & Stripe payment integration
+
+### 📌 **4. Orders & Payments (`/features/orders/`)**
+- **`Orders.js`** → Shows past orders and their statuses
+- **`PaymentSuccess.js`** → Confirmation page after successful payment
+
+### 📌 **5. Insurance Claims (`/features/claims/`)**
+- **`SubmitClaim.js`** → Allows users to submit insurance claims
+- **`ClaimStatus.js`** → Displays claim processing status
+
+### 📌 **6. Admin Dashboard & Analytics (`/features/analytics/`)**
+- **`AdminDashboard.js`** → Overview of users, policies, claims, and analytics
+- **`UserManagement.js`** → Allows admin to manage users
+- **`DataAnalytics.js`** → Displays charts & reports on policy trends, user demographics
+
+## 🔹 **Services (`/services/`)**
+All API calls are handled via Axios services for modularity.
+- **`authService.js`** → Handles authentication API calls (Login, Register, Logout)
+- **`policyService.js`** → Fetches policies from backend
+- **`cartService.js`** → Manages cart operations
+- **`orderService.js`** → Handles orders & payments
+- **`claimService.js`** → Submits and tracks insurance claims
+
+## 🔹 **Redux Store (`/store/`)**
+Redux Toolkit is used to manage global state:
+- **`authSlice.js`** → Manages authentication state
+- **`policySlice.js`** → Handles policies data
+- **`cartSlice.js`** → Manages cart items
+- **`orderSlice.js`** → Stores order history
+- **`claimSlice.js`** → Tracks claim status
+
+## 🌟 **How to Run the Project?**
+
+### 1️⃣ **Clone the Repository**
+```bash
+$ git clone https://github.com/Mayank-SDE/InsureEase.git
+$ cd insurance-policy-management-frontend
+```
+
+### 2️⃣ **Install Dependencies**
+```bash
+$ npm install
+```
+
+### 3️⃣ **Start the Development Server**
+```bash
+$ npm start
+```
+The app will run on `http://localhost:3000/` 🚀
+
+## 🎯 **To-Do / Future Enhancements**
+- ✅ Implement full authentication & authorization with JWT
+- ✅ Integrate Stripe for payments
+- ✅ Admin dashboard for analytics
+- 🔜 Role-based permissions for different users
+- 🔜 Improve UI/UX with better theming & animations
+
+## 📜 **License**
+This project is licensed under the **MIT License**.
+
+## 👨‍💻 **Contributors**
+- **Mayank** ([@Mayank-SDE](https://github.com/Mayank-SDE)) - Lead Developer & Architect
+
+---
+
+This **Frontend README** provides a detailed overview of the structure and functionality. Let me know if you want any modifications! 🚀
+
+```bash
+  $ npx create-vite@latest insurance-frontend --template react
+  $ cd insurance-frontend
+  $ npm install react-router-dom redux react-redux @reduxjs/toolkit axios bootstrap react-toastify
+
+```
