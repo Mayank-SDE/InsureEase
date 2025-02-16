@@ -1,5 +1,7 @@
 // App.jsx - Main Application Component
 import { Routes, Route } from "react-router-dom";
+
+// Common pages
 import Navbar from "./components/common/Navbar";
 import Home from "./pages/common/Home";
 import Login from "./pages/common/Login";
